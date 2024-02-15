@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purpleAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 255, 255, 255)),
         useMaterial3: true,
       ),
       home: const LoginPage(),
@@ -25,41 +27,53 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.purple.shade50,
-      appBar: AppBar(
-        title: const Center(
-          child: Text('Login Page'),
-        ),
-        backgroundColor: const Color.fromARGB(255, 32, 31, 32),
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-        elevation: 5
+    return Container(      
+        decoration: const BoxDecoration(
+        gradient: LinearGradient(colors: colores, transform: GradientRotation(0.69))
       ),
+    child: Scaffold(
+      backgroundColor: Colors.transparent,
+
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(right: 20, left: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              const Text('Registration Page', style: TextStyle(color: Colors.white, fontSize: 40)),
               const SizedBox(
-                height: 25,
+                height: 90,
               ),
-              const TextField(
-              obscureText: false,
-                decoration: InputDecoration(
-                border: OutlineInputBorder(borderSide: BorderSide(width: 2)),
-                labelText: 'Login or eMail'
-                ),
+              const SizedBox(
+                width: 500,
+                child:               
+                  TextField(
+                  obscureText: false,
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    labelText: 'Login or eMail'
+                    ),
+                  ),
               ),
               const SizedBox(
                 height: 15,
               ),
-              const TextField(
-              obscureText: true,
-                decoration: InputDecoration(
-                border: OutlineInputBorder(borderSide: BorderSide(width: 2)),
-                labelText: 'Password'
-                ),
+              const SizedBox(
+                width: 500,
+                child:               
+                  TextField(
+                  obscureText: true,
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    labelText: 'Password'
+                    ),
+                  ),
               ),
               const SizedBox(
                 height: 15,
@@ -77,7 +91,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 child: const Text(
                   'Log in',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
               ),
               const SizedBox(
@@ -86,7 +100,7 @@ class LoginPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account?"),
+                  const Text("Don't have an account?",style: TextStyle(color: Colors.white)),
                   TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -95,13 +109,15 @@ class LoginPage extends StatelessWidget {
                               builder: (context) => const RegistrationPage()),
                         );
                       },
-                      child: const Text('Registration'))
-                ],
-              ),
-            ],
+                      child: const Text('Registration', style: TextStyle(color: Colors.white))
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
+      )
     );
   }
 }
@@ -111,76 +127,98 @@ class RegistrationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.purple.shade50,
-      appBar: AppBar(
-        title: const Center(
-          child: Text('Registration Page'),
-        ),
-        backgroundColor: const Color.fromARGB(255, 32, 31, 32),
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-        elevation: 5
+    return Container(      
+        decoration: const BoxDecoration(
+        gradient: LinearGradient(colors: colores, transform: GradientRotation(0.69))
       ),
+    child: Scaffold(
+      backgroundColor: Colors.transparent,
+
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(right: 20, left: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              const Text('Login Page', style: TextStyle(color: Colors.white, fontSize: 40)),
               const SizedBox(
-                height: 25,
+                height: 90,
+              ),
+              const SizedBox(
+                width: 500,
+                child:               
+                  TextField(
+                  obscureText: false,
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    labelText: 'Login'
+                    ),
+                  ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+                            const SizedBox(
+                width: 500,
+                child:               
+                  TextField(
+                  obscureText: false,
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    labelText: 'eMail'
+                    ),
+                  ),
               ),
               const SizedBox(
                 height: 15,
               ),
-              const TextField(
-              obscureText: false,
-                decoration: InputDecoration(
-                border: OutlineInputBorder(borderSide: BorderSide(width: 2)),
-                labelText: 'Login',
-                ),
+              const SizedBox(
+                width: 500,
+                child:               
+                  TextField(
+                  obscureText: true,
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    labelText: 'Password'
+                    ),
+                  ),
+              ),
+               const SizedBox(
+                height: 15,
+              ),
+               const SizedBox(
+                width: 500,
+                child:               
+                  TextField(
+                  obscureText: false,
+                  style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 3, color: Colors.white)),
+                    labelText: 'Confirm Password'
+                    ),
+                  ),
               ),
               const SizedBox(
                 height: 15,
               ),
-
-              const TextField(
-              obscureText: false,
-                decoration: InputDecoration(
-                border: OutlineInputBorder(borderSide: BorderSide(width: 2)),
-                labelText: 'Your eMail',
-                ),
-              ),
-
-              const SizedBox(
-                height: 15,
-              ),
-
-              const TextField(
-              obscureText: true,
-                decoration: InputDecoration(
-                border: OutlineInputBorder(borderSide: BorderSide(width: 2)),
-                labelText: 'Password',
-                ),
-              ),
-                const SizedBox(
-                height: 15,
-              ),
-              const TextField(
-              obscureText: true,
-                decoration: InputDecoration(
-                border: OutlineInputBorder(borderSide: BorderSide(width: 2)),
-                labelText: 'Confirm password',
-                ),
-              ),
-
               const SizedBox(
                 height: 15,
               ),
               ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                    content: Text('Popa'),
+                    content: Text('POPA'),
                     duration: Duration(milliseconds: 500),
                   ));
                 },
@@ -189,8 +227,8 @@ class RegistrationPage extends StatelessWidget {
                       const EdgeInsets.fromLTRB(50, 20, 50, 20)),
                 ),
                 child: const Text(
-                  'Register',
-                  style: TextStyle(fontSize: 18),
+                  'Log in',
+                  style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
               ),
               const SizedBox(
@@ -199,18 +237,24 @@ class RegistrationPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Have account?'),
+                  const Text("Already registered?",style: TextStyle(color: Colors.white)),
                   TextButton(
                       onPressed: () {
-                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()),
+                        );
                       },
-                      child: const Text('Log in')),
-                ],
-              )
-            ],
+                      child: const Text('Enter', style: TextStyle(color: Colors.white))
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
+      )
     );
   }
 }
