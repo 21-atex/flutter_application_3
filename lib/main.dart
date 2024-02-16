@@ -199,7 +199,7 @@ class RegistrationPage extends StatelessWidget {
                 width: 500,
                 child:               
                   TextField(
-                  obscureText: false,
+                  obscureText: true,
                   style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
                     decoration: InputDecoration(
                     labelStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
