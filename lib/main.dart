@@ -234,7 +234,7 @@ class RegistrationPage extends StatelessWidget {
                       const EdgeInsets.fromLTRB(50, 20, 50, 20)),
                 ),
                 child: const Text(
-                  'Log in',
+                  'Register',
                   style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
               ),
