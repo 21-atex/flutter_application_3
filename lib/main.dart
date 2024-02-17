@@ -33,20 +33,23 @@ class LoginPage extends StatelessWidget {
       ),
     child: Scaffold(
       backgroundColor: Colors.transparent,
-
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(right: 20, left: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text('Registration Page', style: TextStyle(color: Colors.white, fontSize: 40)),
+              const Text('Login Page', style: TextStyle(color: Colors.white, fontSize: 40)),
               const SizedBox(
-                height: 90,
+                height: 45,
+              ),
+              const Icon(Icons.login, size: 30, color: Color.fromARGB(255, 255, 255, 255)), 
+                const SizedBox(
+                height: 45,
               ),
               const SizedBox(
                 width: 500,
-                child:               
+                child:              
                   TextField(
                   obscureText: false,
                   style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
@@ -140,9 +143,13 @@ class RegistrationPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text('Login Page', style: TextStyle(color: Colors.white, fontSize: 40)),
+              const Text('Registration Page', style: TextStyle(color: Colors.white, fontSize: 40)),
               const SizedBox(
-                height: 90,
+                height: 45,
+              ),
+              const Icon(Icons.how_to_reg, size: 30, color: Color.fromARGB(255, 255, 255, 255)), 
+              const SizedBox(
+                height: 45,
               ),
               const SizedBox(
                 width: 500,
